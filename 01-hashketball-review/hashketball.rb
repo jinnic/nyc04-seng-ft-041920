@@ -128,3 +128,91 @@ def game_hash
 end
 
 # Write code here
+
+#helper method
+def all_players
+  all_players = game_hash.each do |location, attrubutes|
+    attrubutes[:players]
+  end.flatten
+end
+
+def player(player_name)
+  player = all_players.find do |player_hash|
+    player_hash[:player_name] == player_name
+    binding.pry
+  end
+end
+
+def num_points_scored (player_name)
+  # game_hash.each do |location, attrubutes|
+
+  #   #find Enumerable returens first matcing value
+  #   #or nil for not matching
+  #   attrubutes[:players].find do |player_hash|
+  #     #true => it returns player_name
+  #     player_hash[:player_name] == player_name
+  #   end
+  # end
+
+  # all_players = game_hash.each do |location, attrubutes|
+  #   attrubutes[:players]
+  # end.flatten
+
+  # player = all_players.find do |player_hash|
+  #   player_hash[:player_name] == player_name
+  # end
+  #player(player_name)[:points]
+  
+
+  binding.pry
+
+end
+
+player("Jeff Adrien")
+
+
+def shoe_size(player_name)
+
+end
+
+
+
+############################################################################
+# Breakout Workshop EXERCISE:                                              #
+# # 1. Define a method called get_names that takes an array of instructors #
+# #    and returns just their names.                                       #
+# # 2. Define a method called excited_instructors that takes               #
+# #    an array of instructors and returns all the instructors with        #
+# #    an energy level higher than 5                                       #
+# # 3. Define a method called get_instructor_by_hometown that takes        #
+# #    an array of instructors AND a string of a hometown                  #
+# #    and returns just the one instructor whose hometown matches          #
+############################################################################
+
+
+instructors = [
+  {name: 'Michelle', hometown: 'Culiacan', energy_level: 7},
+  {name: 'Jack', hometown: 'Jersey City', energy_level: 8},
+  {name: 'Rei', hometown: 'Hannacroix', energy_level: 9},
+  {name: 'Raffy', hometown: 'Middle of Nowhere', energy_level: 1000000},
+  {name: 'Ian', hometown: 'Upstate NY', energy_level: 10}
+]
+
+def get_names(instructors)
+  instructors.map do |instructors_hash|
+    instructors_hash[:name]
+  end
+end
+
+def excited_instructors(instructors)
+  instructors.select do |instructors_hash|
+    instructors_hash[:energy_level] > 5
+  end
+end
+
+def get_instructor_by_hometown(instructors, hometown)
+  instructors.find do |instructor|
+    instructor[:hometown] == hometown
+  end
+end
+
