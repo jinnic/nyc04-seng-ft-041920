@@ -31,12 +31,7 @@ def run
     welcome
     user_input = get_user_input
     books = get_books(user_input)
-    books["items"].each{|item| puts item["volumeInfo"]["title"]}
     binding.pry
-    # title(books)
 end
 
-
-def title(books)
-     books["items"].each{|item| puts item["volumeInfo"]["title"]}
-end
+run
